@@ -1,44 +1,3 @@
-// 1.1
-// 생략
-
-// 1.2
-(5 + 4 + (2 - (3 - (6 + 4 / 5)))) / (3 * (6 - 2) * (2 - 7));
-
-// 1.3
-// 세 개가 아니라 n개로 바꿔보자.
-function ex(numbers: number[]) {
-  return sumOfSquares(getNumberExceptMin(numbers));
-}
-
-function getNumberExceptMin(numbers: number[]) {
-  return numbers.sort((a, b) => a - b).slice(1);
-}
-
-function sumOfSquares(numbers: number[]) {
-  return numbers.reduce((acc, cur) => acc + square(cur), 0);
-}
-
-function square(x: number) {
-  return x ** 2;
-}
-
-// 1.4
-function plus(a, b) {
-  return a + b;
-}
-function minus(a, b) {
-  return a - b;
-}
-function a_plus_abs_b(a, b) {
-  return (b >= 0 ? plus : minus)(a, b);
-}
-/**
- * 작동방식
- * b가 0보다큰 경우에는 plus라는 식이 평가(?)된다. 그리고 plus(a,b)라는 함수가 실행된다.
- * b가 0보다 작은 경우에는 minus라는 식이 평가(?)된다. 그리고 minus(a,b)라는 함수가 실행된다.
- *
- */
-
 // 1.5
 function p() {
   // 책에는 로그가 없지만 다음과 같이 로그를 찍어보면 이해하기 더 쉽다.
@@ -87,9 +46,11 @@ asyncP();
  */
 
 // 위를 활용하면 콜스택이 초과되는 처리를 태스크큐를 이용해 처리할수도있지않을까?
-function asyncLoopP(loopCount: number) {
+function asyncLoopP(loopCount) {
   for (let i = 0; i < loopCount; i++) {
     setTimeout(() => console.log('p'));
   }
 }
 asyncLoopP(1000000);
+
+export {};
