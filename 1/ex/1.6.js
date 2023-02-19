@@ -8,13 +8,13 @@ function conditional(predicate, then_clause, else_clause) {
 }
 function sqrt_iter(guess, x) {
   return conditional(
-    is_good_enought(guess, x),
+    is_good_enough(guess, x),
     guess,
     sqrt_iter(improve(guess, x), x)
   );
 }
 
-function is_good_enought(guess, x) {
+function is_good_enough(guess, x) {
   return Math.abs(square(guess) - x) < 0.001;
 }
 

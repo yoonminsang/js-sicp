@@ -4,7 +4,7 @@
 // }
 
 function sqrt_iter(guess: number, x: number) {
-  return is_good_enought(guess, x) ? guess : sqrt_iter(improve(guess, x), x);
+  return is_good_enough(guess, x) ? guess : sqrt_iter(improve(guess, x), x);
 }
 
 function improve(guess: number, x: number) {
@@ -15,7 +15,7 @@ function average(x: number, y: number) {
   return (x + y) / 2;
 }
 
-function is_good_enought(guess: number, x: number) {
+function is_good_enough(guess: number, x: number) {
   return Math.abs(square(guess) - x) < 0.001;
 }
 
